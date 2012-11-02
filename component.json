@@ -3,6 +3,6 @@
     "version": "0.0.1",
     "main": ["./buster-jquery-assertions.js"],
     "dependencies": {
-        "buster.js" : "~0.6.2" 
+        "buster.js" : ">=0.6.2" 
     }
 }
