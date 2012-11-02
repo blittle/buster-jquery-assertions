@@ -2,5 +2,7 @@
     "name": "buster-jquery-assertions",
     "version": "0.0.1",
     "main": ["./buster-jquery-assertions.js"],
-    "dependencies": {}
+    "dependencies": {
+        "buster": "0.6.2"
+    }
 }
