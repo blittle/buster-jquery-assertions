@@ -1,4 +1,7 @@
 (function() {
+
+    "use strict";
+
     function msg(message) {
         if (!message) { return ""; }
         return message + (/[.:!?]$/.test(message) ? " " : ": ");
@@ -55,7 +58,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("toHaveClass", {
+    buster.assertions.add("haveClass", {
         assert: function ($el, className) {
             return $el.hasClass(className);
         },
@@ -65,7 +68,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("toHaveValue", {
+    buster.assertions.add("haveValue", {
         assert: function ($el, value) {
             return $el.val() == value;
         },
@@ -75,7 +78,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("toHaveAttr", {
+    buster.assertions.add("haveAttr", {
         assert: function ($el, attributeName, expectedAttributeValue) {
             return hasProperty($el.attr(attributeName), expectedAttributeValue);
         },
