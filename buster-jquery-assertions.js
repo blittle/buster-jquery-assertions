@@ -98,4 +98,37 @@
         values: actualAndExpectedMessageValues
     });
 
+	buster.assertions.add("isPromise", {
+		assert: function (value) {
+			if (typeof value.then !== "function") {
+				return false;
+			}
+			return String($.Deferred().then) === String(value.then);
+		},
+		assertMessage: "${2}Expected [${0}] to be a promise object",
+		refuteMessage: "${2}Expected [${0}] not to be a promise object",
+		expectation: "toBePromise",
+		values: actualAndExpectedMessageValues
+	});
+
+	buster.assertions.add("isJQuery", {
+		assert: function (value) {
+			return !!value.jquery;
+		},
+		assertMessage: "${2}Expected [${0}] to be a jQuery object",
+		refuteMessage: "${2}Expected [${0}] not to be a jQuery object",
+		expectation: "toBeJQuery",
+		values: actualAndExpectedMessageValues
+	});
+
+	buster.assertions.add("isJQueryElement", {
+		assert: function ($el) {
+			return !!($el.jquery && $el[0].tagName);
+		},
+		assertMessage: "${2}Expected [${0}] to be a jQuery Element",
+		refuteMessage: "${2}Expected [${0}] not to be a jQuery Element",
+		expectation: "toBeJQueryElement",
+		values: actualAndExpectedMessageValues
+	});
+
 })();
