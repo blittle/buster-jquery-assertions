@@ -18,7 +18,7 @@
         return actualValue == expectedValue;
     };
 
-    buster.assertions.add("containsElement", {
+	buster.referee.add("containsElement", {
         assert: function ($tree, selector) {
             return $tree.find(selector).length > 0;
         },
@@ -28,7 +28,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("haveText", {
+	buster.referee.add("haveText", {
         assert: function ($el, text) {
             return $el.html().indexOf(text) !== -1;
         },
@@ -38,7 +38,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("isEmpty", {
+	buster.referee.add("isEmpty", {
         assert: function ($el) {
             return $el.is(':empty');
         },
@@ -48,7 +48,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("exist", {
+	buster.referee.add("exist", {
         assert: function ($el) {
             return $el.size() > 0;
         },
@@ -58,7 +58,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("haveClass", {
+	buster.referee.add("haveClass", {
         assert: function ($el, className) {
             return $el.hasClass(className);
         },
@@ -68,7 +68,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("haveValue", {
+	buster.referee.add("haveValue", {
         assert: function ($el, value) {
             return $el.val() == value;
         },
@@ -78,7 +78,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("haveAttr", {
+	buster.referee.add("haveAttr", {
         assert: function ($el, attributeName, expectedAttributeValue) {
             return hasProperty($el.attr(attributeName), expectedAttributeValue);
         },
@@ -88,7 +88,7 @@
         values: actualAndExpectedMessageValues
     });
 
-    buster.assertions.add("hidden", {
+	buster.referee.add("hidden", {
         assert: function ($el) {
             return $el.is(':hidden');
         },
@@ -98,7 +98,7 @@
         values: actualAndExpectedMessageValues
     });
 
-	buster.assertions.add("isPromise", {
+	buster.referee.add("isPromise", {
 		assert: function (value) {
 			if (typeof value.then !== "function") {
 				return false;
@@ -111,7 +111,7 @@
 		values: actualAndExpectedMessageValues
 	});
 
-	buster.assertions.add("isJQuery", {
+	buster.referee.add("isJQuery", {
 		assert: function (value) {
 			return !!value.jquery;
 		},
@@ -121,7 +121,7 @@
 		values: actualAndExpectedMessageValues
 	});
 
-	buster.assertions.add("isJQueryElement", {
+	buster.referee.add("isJQueryElement", {
 		assert: function ($el) {
 			return !!($el.jquery && $el[0].tagName);
 		},
